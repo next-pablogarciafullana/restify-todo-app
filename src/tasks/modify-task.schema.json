@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "modify-task.json",
+  "type": "object",
+  "required": ["id", "body"],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+      "errorMessage": {
+        "pattern": "id should be an UUID",
+        "type": "id must be a string",
+        "required": "id is required"
+      }
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "object",
+      "properties": {
+        "title": {
+          "$id": "#/properties/body/properties/title",
+          "type": "string",
+          "errorMessage": {
+            "type": "title must be a string"
+          }
+        },
+        "description": {
+          "$id": "#/properties/body/properties/description",
+          "type": "string",
+          "errorMessage": {
+            "type": "description must be a string"
+          }
+        }
+      },
+      "required": ["title", "description"],
+      "additionalProperties": true
+    },
+    "additionalProperties": true
+  }
+}

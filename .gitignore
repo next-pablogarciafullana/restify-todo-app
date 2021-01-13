@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+/dist
+
+# IDE
+/.idea
+/.awcache
+/.vscode
+*.code-workspace
+
+# misc
+.DS_Store
+npm-debug.log
+/**/npm-debug.log
+/packages/**/.npmignore
+/packages/**/LICENSE
+
+# tests
+/test
+/coverage
+/.nyc_output

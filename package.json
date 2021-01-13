@@ -1,0 +1,53 @@
+{
+  "name": "restify-app-example",
+  "version": "1.0.0",
+  "description": "Ejemplo de aplicación node con restify",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "start": "npm run build && node --require source-map-support/register dist/start.js",
+    "test": "cross-env LOG_LEVEL=fatal nyc --require ts-node/register mocha test/**/*.spec.ts --exclude test/e2e.spec.ts --reporter spec --retries 3 --exit",
+    "test:e2e": "cross-env LOG_LEVEL=fatal nyc --require ts-node/register mocha test/e2e.spec.ts --reporter spec --retries 3 --exit",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "ajv-errors": "^1.0.1",
+    "bunyan": "^1.8.14",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "restify": "^8.5.1",
+    "restify-errors": "^8.0.2",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.12",
+    "@types/pg": "^7.14.7",
+    "@types/restify": "^8.4.2",
+    "@types/restify-errors": "^4.3.3",
+    "@types/sinon": "^9.0.9",
+    "@types/validator": "^13.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "sinon": "^9.2.1",
+    "supertest": "^6.0.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  }
+}
